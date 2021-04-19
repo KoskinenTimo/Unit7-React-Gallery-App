@@ -4,6 +4,7 @@ import Nav from './Nav';
 
 export default class SearchForm extends Component {
 
+  // 'textInput' is a ref for the search input field.
   constructor(props) {
     super(props);
     this.textInput = React.createRef();
@@ -12,16 +13,27 @@ export default class SearchForm extends Component {
     }
   }
   
+  /**
+   * Updates the input inside state as the text changes inside the field.
+   * @param {Event} e 
+   */
   searchInputChange = e => {
     this.setState({input:e.target.value});
   }
 
+  /**
+   * Updates the current url to match the search input
+   * @param {Event} e 
+   */
   submitInput = (e) => {
     e.preventDefault();
     this.props.history.push(`/search/${this.textInput.current.value}`);
     e.currentTarget.reset();
   }
 
+  /**
+   * Renders the search form with a input field and submit button. 
+   */
   render() {
     return (
       <div>
