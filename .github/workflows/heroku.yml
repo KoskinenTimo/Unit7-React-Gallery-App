@@ -13,17 +13,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-
       - name: Push to Heroku
-        uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
+        uses: gonuit/heroku-docker-deploy@v1.3.3
         with:
           email: ${{ secrets.HEROKU_EMAIL }}
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-          process_type: web
-        env:
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }} 
+        env:          
           REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
-          
-   
-          
-### ⬆ IMPORTANT PART ⬆ ###
+      
