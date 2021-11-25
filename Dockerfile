@@ -8,8 +8,6 @@ RUN npm install
 
 RUN npm run build
 
-ENV REACT_APP_API_KEY=secrets.REACT_APP_API_KEY
-
 RUN npm install -g serve
 
 EXPOSE 3000
