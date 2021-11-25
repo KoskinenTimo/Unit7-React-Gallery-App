@@ -17,11 +17,12 @@ jobs:
       - name: Push to Heroku
         uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
         with:
-          REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
           email: ${{ secrets.HEROKU_EMAIL }}
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
           process_type: web
+        env:
+          REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
           
    
           
