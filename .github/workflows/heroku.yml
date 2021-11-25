@@ -1,5 +1,4 @@
-# Your workflow name.
-name: Deploy to heroku.
+name: Deploy to heroku
 
 on:
   push:
@@ -19,7 +18,5 @@ jobs:
           email: ${{ secrets.HEROKU_EMAIL }}
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }} 
-        env:
-          REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
         
       
